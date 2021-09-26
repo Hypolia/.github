@@ -15,14 +15,14 @@ You can also find `important information related to the project`.
 ## Nos Technologies
 
 ### Web Application
-Notre SiteWeb est séparé en plusieurs applications, plus précisément l'API Rest est distincts du Frontend. Ainsi cela nous permet une meilleur structuration de nos applications et une plus grande liberté.
+Our website is separated into several applications, more precisely the API Rest is separate from the Frontend. This allows us a better structuring of our applications and a greater freedom.
 
 **__Backend (API Rest)__**
-Notre backend est en réalité une API-Rest sous AdonisJS. Cette dernière à la particulité d'être le squelette des données. Chaque requête passe par elle, que ça soit pour l'application frontend, le bot et le serveur minecraft. Ainsi tout est unifié et permet un meilleur contrôle. Si une modification est faites, elle s'appliquera automatiquement sur chaque application. Ainsi on gagne en temps, en optimisation, etc...
+Our backend is actually an API-Rest under AdonisJS. This one has the particularity to be the data skeleton. Every request goes through it, whether it's for the frontend application, the bot or the minecraft server. So everything is unified and allows a better control. If a modification is made, it will be automatically applied to each application. So we save time, optimization, etc...
 
-Nous utilisons: [PostgreSQL](https://www.postgresql.org/) et [AdonisJS](https://adonisjs.com/)
+We use: [PostgreSQL](https://www.postgresql.org/) and [AdonisJS](https://adonisjs.com/)
 
 **__Frontend__**
-Notre frontend est la partie visuelle de notre site. Ce dernier regroupe les pages principales, le dashboard, les profils etc... Afin de fournir un rendu rapide, notre application frontend utilise plusieurs technologies :
- - Framework UI : [WindiCSS](https://windicss.org/) et [TailwindCSS](https://tailwindcss.com/)
- - Framework Frontend : [VueJS](https://v3.vuejs.org/) et [NuxtJS](https://nuxtjs.org/)
+Our frontend is the visual part of our site. It includes the main pages, the dashboard, the profiles etc... In order to provide a fast rendering, our frontend application uses several technologies:
+ - Framework UI : [WindiCSS](https://windicss.org/) and [TailwindCSS](https://tailwindcss.com/)
+ - Framework Frontend : [VueJS](https://v3.vuejs.org/) and [NuxtJS](https://nuxtjs.org/)
