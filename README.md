@@ -1,4 +1,4 @@
-<img height="50" src="https://cdn.discordapp.com/attachments/741715676863135811/880194781559541810/icon_1500x1500_2.png" alt="Hypolia Icon" />
+<img height="50" src="https://github.com/Hypolia/.github/blob/main/icon.png" alt="Hypolia Icon" />
 
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -7,7 +7,7 @@
 ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-![Hypolia Banner](https://media.discordapp.net/attachments/741715676863135811/891764975125790720/Banner2.png?width=1220&height=686)
+![Hypolia Banner](https://github.com/Hypolia/.github/blob/main/Croquis.png)
 
 Welcome to the official **Hypolia** github page, where you can find all our OpenSource work, as well as documentation.
 You can also find `important information related to the project`.
