@@ -1,28 +1,38 @@
-<img height="50" src="https://github.com/Hypolia/.github/blob/main/icon.png" alt="Hypolia Icon" />
+<img height="50" src="https://github.com/Hypolia/.github/blob/main/icon.png" alt="Hypolia" />
 
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
-![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+![Minecraft](https://img.shields.io/badge/Minecraft-62B47A?style=for-the-badge&logo=minecraft&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Argo CD](https://img.shields.io/badge/Argo%20CD-EF7B4D?style=for-the-badge&logo=argo&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)
 
 ![Hypolia Banner](https://github.com/Hypolia/.github/blob/main/Croquis.png)
 
-Welcome to the official **Hypolia** github page, where you can find all our OpenSource work, as well as documentation.
-You can also find `important information related to the project`.
+Hypolia est un serveur Minecraft de mini-jeux. Tout le réseau est écrit en Rust, tourne sur
+[rspigot](https://github.com/ferrislabs/rspigot) et se déploie sur Kubernetes.
 
-## Nos Technologies
+## Les dépôts
 
-### Web Application
-Notre SiteWeb est séparé en plusieurs applications, plus précisément l'API Rest est distincts du Frontend. Ainsi cela nous permet une meilleur structuration de nos applications et une plus grande liberté.
+| Dépôt | Rôle |
+|---|---|
+| [`sdk`](https://github.com/hypolia/sdk) | Contrats partagés : protocole lobby / jeux / orchestrateur, domaine de la progression joueur |
+| [`platform`](https://github.com/hypolia/platform) | Orchestrateur (files d'attente, matchmaking, flotte de serveurs), plugin proxy, chart Helm du réseau |
+| [`lobby`](https://github.com/hypolia/lobby) | Hub : spawn, PNJ, menus, profil, collectibles, comptes |
+| [`sheepwars`](https://github.com/hypolia/sheepwars) | Mini-jeu SheepWars |
+| [`towerwars`](https://github.com/hypolia/towerwars) | Mini-jeu TowerWars, modes Solo et Duo |
+| [`hypolia.fr`](https://github.com/hypolia/hypolia.fr) | Site, blog et documentation |
+| `infra` (privé) | Déploiement GitOps du réseau |
 
-**__Backend (API Rest)__**
-Notre backend est en réalité une API-Rest sous AdonisJS. Cette dernière à la particulité d'être le squelette des données. Chaque requête passe par elle, que ça soit pour l'application frontend, le bot et le serveur minecraft. Ainsi tout est unifié et permet un meilleur contrôle. Si une modification est faites, elle s'appliquera automatiquement sur chaque application. Ainsi on gagne en temps, en optimisation, etc...
+## Architecture
 
-Nous utilisons: [PostgreSQL](https://www.postgresql.org/) et [AdonisJS](https://adonisjs.com/)
+- **Proxy** : `rspigot-proxy` avec le plugin Hypolia. Il route les joueurs vers les lobbies et les parties.
+- **Orchestrateur** : service Rust (axum, kube-rs). Il gère les files, lance les pods de jeu à la demande et suit leur heartbeat.
+- **Serveurs de jeu** : un serveur rspigot par partie, avec le plugin du jeu en sidecar.
+- **Données** : PostgreSQL (CloudNativePG) pour la progression et le lobby, RustFS (S3) pour les maps.
+- **Déploiement** : images sur `ghcr.io/hypolia`, chart Helm, Argo CD sur un cluster k3s.
 
-**__Frontend__**
-Notre frontend est la partie visuelle de notre site. Ce dernier regroupe les pages principales, le dashboard, les profils etc... Afin de fournir un rendu rapide, notre application frontend utilise plusieurs technologies :
- - Framework UI : [WindiCSS](https://windicss.org/) et [TailwindCSS](https://tailwindcss.com/)
- - Framework Frontend : [VueJS](https://v3.vuejs.org/) et [NuxtJS](https://nuxtjs.org/)
+## Le site
+
+`hypolia.fr` est un monorepo pnpm + Turborepo avec trois apps Astro (site, blog, docs),
+React 19 et Tailwind CSS 4.
